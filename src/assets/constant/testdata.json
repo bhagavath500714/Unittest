@@ -1,0 +1,89 @@
+{
+    "name":"test",
+    "criteria": {
+      "type": "compoundCriteria",
+      "operation": "AND",
+      "operands": [
+        {
+          "type": "age",
+          "operation": "GT",
+          "age": 18
+        },
+        {
+          "type": "gender",
+          "operation": "EQ",
+          "gender": "M"
+        },
+        {
+          "type": "observationsNumeric",
+          "operation": "AND",
+          "testName": {
+            "type": "testName",
+            "operation": "EQ",
+            "operand": "LDL"
+          },
+          "testValue": {
+            "type": "testValueDouble",
+            "operation": "GT",
+            "operands": [
+              40
+            ]
+          },
+          "time": {
+            "type": "time",
+            "operation": "GT",
+            "operands": [
+              10
+            ]
+          }
+        },
+        {
+          "type": "observationsString",
+          "operation": "AND",
+          "testName": {
+            "type": "testName",
+            "operation": "EQ",
+            "operand": "Hepatitus"
+          },
+          "testValue": {
+            "type": "testValueString",
+            "operation": "EQ",
+            "operand": "PRESENT"
+          },
+          "time": {
+            "type": "time",
+            "operation": "GT",
+            "operands": [
+              10
+            ]
+          }
+        },
+        {
+          "type": "conditions",
+          "operation": "AND",
+          "codeSet": {
+            "type": "codeSet",
+            "operation": "EQ",
+            "operand": "ICD-10"
+          },
+          "code": {
+            "type": "code",
+            "operation": "IN",
+            "operands": [
+              "Z22.x",
+              "G56.1x"
+            ]
+          },
+          "time": {
+            "type": "time",
+            "operation": "GT",
+            "operands": [
+              10
+            ]
+          }
+        }
+      ]
+    }
+  }
+  
+  
